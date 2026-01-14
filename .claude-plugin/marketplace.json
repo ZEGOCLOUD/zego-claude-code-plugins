@@ -1,0 +1,47 @@
+{
+    "name": "zego-claude-code-plugins",
+    "owner": {
+      "name": "ZEGO",
+      "email": "docuo@zego.im",
+      "url": "https://zego.im"
+    },
+    "metadata": {
+      "description": "",
+      "version": "1.0.0"
+    },
+    "plugins": [
+      {
+        "name": "write-zego-docs",
+        "source": "./plugins/write-zego-docs",
+        "version": "1.0.1",
+        "author": {
+          "name": "Oliver Yang",
+          "email": "oliveryang@zego.im",
+          "url": "https://zego.im"
+        },
+        "keywords": [
+          "zego",
+          "documentation",
+          "writing",
+          "editing",
+          "formatting",
+          "translation"
+        ],
+        "category": "documentation",
+        "commands": [
+          "./commands/review-run-demo-doc.md"
+        ],
+        "skills": "./skills/",
+        "agents": [
+          "./agents/run-demo-reviewer.md"
+        ],
+        "mcpServers": {
+            "ZEGO": {
+              "type": "http",
+              "url": "https://doc-ai.zego.im/mcp/"
+            }
+          },
+        "strict": false
+      }
+    ]
+  }
