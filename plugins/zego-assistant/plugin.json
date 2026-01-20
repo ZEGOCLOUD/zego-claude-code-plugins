@@ -1,0 +1,8 @@
+{
+  "name": "zego-assistant",
+  "description": "ZEGO产品集成和问题排查智能助手 - 帮助开发者快速接入RTC/IM/AIAgent产品，并提供配置检查、性能诊断和问题排查支持",
+  "author": {
+    "name": "Oliver Yang",
+    "email": "oliveryang@zego.im"
+  }
+}

@@ -1,47 +1,73 @@
 {
     "name": "zego-claude-code-plugins",
     "owner": {
-      "name": "ZEGO",
-      "email": "docuo@zego.im",
-      "url": "https://zego.im"
+        "name": "ZEGO",
+        "email": "docuo@zego.im",
+        "url": "https://zego.im"
     },
     "metadata": {
-      "description": "",
-      "version": "1.0.0"
+        "description": "",
+        "version": "1.0.0"
     },
     "plugins": [
-      {
-        "name": "write-zego-docs",
-        "source": "./plugins/write-zego-docs",
-        "version": "1.0.1",
-        "author": {
-          "name": "Oliver Yang",
-          "email": "oliveryang@zego.im",
-          "url": "https://zego.im"
+        {
+            "name": "write-zego-docs",
+            "source": "./plugins/write-zego-docs",
+            "version": "1.0.1",
+            "author": {
+                "name": "Oliver Yang",
+                "email": "oliveryang@zego.im",
+                "url": "https://zego.im"
+            },
+            "license": "MIT",
+            "keywords": [
+                "zego",
+                "documentation",
+                "writing",
+                "editing",
+                "formatting",
+                "translation"
+            ],
+            "category": "documentation",
+            "commands": [
+                "./commands/review-run-demo-doc.md"
+            ],
+            "skills": "./skills/",
+            "agents": [
+                "./agents/run-demo-reviewer.md"
+            ],
+            "strict": false
         },
-        "keywords": [
-          "zego",
-          "documentation",
-          "writing",
-          "editing",
-          "formatting",
-          "translation"
-        ],
-        "category": "documentation",
-        "commands": [
-          "./commands/review-run-demo-doc.md"
-        ],
-        "skills": "./skills/",
-        "agents": [
-          "./agents/run-demo-reviewer.md"
-        ],
-        "mcpServers": {
-            "ZEGO": {
-              "type": "http",
-              "url": "https://doc-ai.zego.im/mcp/"
-            }
-          },
-        "strict": false
-      }
+        {
+            "name": "zego-assistant",
+            "source": "./plugins/zego-assistant",
+            "version": "1.0.19",
+            "author": {
+                "name": "Oliver Yang",
+                "email": "oliveryang@zego.im",
+                "url": "https://zego.im"
+            },
+            "license": "MIT",
+            "keywords": ["zego", "rtc", "im", "aiagent", "integration", "troubleshooting"],
+            "category": "integration",
+            "commands": [
+                "./commands/check-zego-config.md",
+                "./commands/diagnose-zego-issue.md",
+                "./commands/integrate-zego-aiagent.md",
+                "./commands/integrate-zego-rtc.md"
+            ],
+            "skills": "./skills/",
+            "agents": [
+                "./agents/aiagent-integration-agent.md",
+                "./agents/realtime-audio-video-integration-agent.md"
+            ],
+            "mcpServers": {
+                "ZEGO": {
+                    "type": "http",
+                    "url": "https://doc-ai.zego.im/mcp/"
+                }
+            },
+            "strict": false
+        }
     ]
-  }
+}

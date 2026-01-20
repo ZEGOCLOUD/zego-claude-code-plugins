@@ -11,6 +11,7 @@ ZEGO 官方 Claude Code 插件集合。
 2. **安装插件**
    ```bash
    /plugin install write-zego-docs@zego-claude-code-plugins
+   /plugin install zego-assistant@zego-claude-code-plugins
    ```
 
 3. **验证安装**
