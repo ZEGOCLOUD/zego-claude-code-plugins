@@ -41,7 +41,7 @@
         {
             "name": "zego-assistant",
             "source": "./plugins/zego-assistant",
-            "version": "1.0.24",
+            "version": "1.2.0",
             "author": {
                 "name": "Oliver Yang",
                 "email": "oliveryang@zego.im",
@@ -50,12 +50,7 @@
             "license": "MIT",
             "keywords": ["zego", "rtc", "im", "aiagent", "integration", "troubleshooting"],
             "category": "integration",
-            "commands": [
-                "./commands/check-zego-config.md",
-                "./commands/diagnose-zego-issue.md",
-                "./commands/integrate-zego-aiagent.md",
-                "./commands/integrate-zego-rtc.md"
-            ],
+            "commands": [],
             "skills": "./skills/",
             "agents": [
                 "./agents/aiagent-integration-agent.md",
