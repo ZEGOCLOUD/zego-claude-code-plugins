@@ -1,5 +1,5 @@
 ---
-name: server-token-integration
+name: implement-zego-token-on-server
 description: This skill should be used when the user asks to "integrate ZEGO Token generation", "add Token endpoint", "implement server-side Token API", "generate Token on server", or needs help with ZEGO Token server integration. Provides SDK download and route implementation guidance for Token generation.
 version: 1.0.0
 ---
