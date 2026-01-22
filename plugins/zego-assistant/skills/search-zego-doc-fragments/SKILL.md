@@ -1,7 +1,7 @@
 ---
 name: search-zego-doc-fragments
 description: This skill should be used when the user asks to "look up ZEGO error code", "find error code meaning", "search ZEGO API usage", "check if ZEGO supports feature", "查询ZEGO错误码", "错误码是什么意思", or needs to find specific information about ZEGO APIs, error codes, configuration options, or feature availability. Uses RAG to return knowledge base fragments.
-version: 1.0.0
+version: 1.0.1
 ---
 
 ## ZEGO Knowledge Base Search

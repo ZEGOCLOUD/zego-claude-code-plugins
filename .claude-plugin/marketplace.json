@@ -41,7 +41,7 @@
         {
             "name": "zego-assistant",
             "source": "./plugins/zego-assistant",
-            "version": "1.2.0",
+            "version": "1.2.5",
             "author": {
                 "name": "Oliver Yang",
                 "email": "oliveryang@zego.im",
@@ -52,10 +52,7 @@
             "category": "integration",
             "commands": [],
             "skills": "./skills/",
-            "agents": [
-                "./agents/aiagent-integration-agent.md",
-                "./agents/realtime-audio-video-integration-agent.md"
-            ],
+            "agents": [],
             "mcpServers": {
                 "ZEGO": {
                     "type": "http",

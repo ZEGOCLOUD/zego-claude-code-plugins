@@ -1,7 +1,7 @@
 ---
 name: integrate-zego-product
-description: This skill should be used when the user asks to "integrate ZEGO SDK", "add ZEGO product", "implement ZEGO RTC/AIAgent/etc.", "implement screen sharing", "integrate ZEGO feature", "集成ZEGO产品", "集成屏幕共享", "集成ZEGO某个功能", or requests guidance on integrating ZEGO services or features like Real-Time Audio/Video, ZIM, AI Agent, Low-Latency Live Streaming, screen sharing, in-app audio/video effects, or other ZEGO product features. Provides step-by-step integration workflows for ZEGO products and features.
-version: 1.0.0
+description: This skill should be used when the user asks to "integrate ZEGO", "use ZEGO/zego/aiagent/rtc/zim to implement/develop/build", "implement/develop/build with ZEGO/zego/aiagent/rtc/zim", "集成ZEGO", "使用ZEGO/aiagent/rtc实现/开发/构建", "用ZEGO/aiagent做/实现", or mentions implementing, developing, or building applications with ZEGO products (RTC, AI Agent, ZIM, Effects, Cloud Recording, Live Streaming, etc.). The skill provides step-by-step integration workflows and requires reading product documentation before implementation.
+version: 1.0.1
 ---
 
 ## ZEGO Product Integration Guide
@@ -207,17 +207,18 @@ dataset_ids = ["cloud_player_zh", "cloud_player_server_zh"]  # ❌ These are nam
 **Real-Time Audio/Video/Live Streaming (RTC):**
 - Requires client SDK integration
 - Token authentication for room entry
-- Optional server API for room management
-
-**AI Agent:**
-- Client SDK for agent interaction
-- Server API for agent configuration and management
-- Token authentication for both client and server calls
+- Optional server API for room management and additional features
 
 **In-app Chat (ZIM):**
 - Client SDK for messaging
 - Server API for user and conversation management
 - Token-based user authentication
+
+## Product-Specific Integration
+
+Some products have special integration requirements beyond the general workflow. Consult product-specific reference files:
+
+- `references/ai-agent.md`
 
 ## Integration Checklist
 

@@ -1,7 +1,7 @@
 ---
-name: server-integration
+name: integrate-zego-server-api
 description: This skill should be used when the user asks to "integrate ZEGO server API", "implement API signature", "call ZEGO server API", "generate signature for ZEGO API", or needs help with server-side integration for ZEGO products (RTC, ZIM, AI Agent, etc.). Provides unified API signature mechanism and request structure.
-version: 2.0.0
+version: 2.0.1
 ---
 
 # ZEGO Server API Integration
