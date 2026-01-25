@@ -1,7 +1,7 @@
 ---
 name: resource-downloader
-description: 使用此技能下载资源文件。当用户需要下载 ZEGO 相关资源或者 github 仓库时触发。
-version: 1.0.0
+description: Downloads ZEGO SDKs, sample projects, and GitHub repositories. Use when the user asks to download SDK, clone demo project, or get sample code. Use when the user mentions 下载SDK, 下载示例, 下载demo, clone ZEGO repo, or fetch ZEGO resources.
+version: 1.0.2
 ---
 
 当用户要求下载 ZEGO 相关资源或者 github 仓库时，使用以下脚本下载：

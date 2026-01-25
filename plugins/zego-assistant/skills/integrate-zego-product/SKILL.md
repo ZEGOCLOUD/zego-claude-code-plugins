@@ -1,7 +1,7 @@
 ---
 name: integrate-zego-product
-description: This skill should be used when the user asks to "integrate ZEGO", "use ZEGO/zego/aiagent/rtc/zim to implement/develop/build", "implement/develop/build with ZEGO/zego/aiagent/rtc/zim", "集成ZEGO", "使用ZEGO/aiagent/rtc实现/开发/构建", "用ZEGO/aiagent做/实现", or mentions implementing, developing, or building applications with ZEGO products (RTC, AI Agent, ZIM, Effects, Cloud Recording, Live Streaming, etc.). The skill provides step-by-step integration workflows and requires reading product documentation before implementation.
-version: 1.0.1
+description: Guides integration of ZEGO real-time communication SDKs. Use when the user asks to integrate ZEGO, 即构, Express SDK, ZIM, or any ZEGO product. Use when building video calls, voice calls, 1v1 calls, live streaming, instant messaging, chat apps, AI voice assistants, digital humans, or interactive whiteboards. Use when implementing screen sharing, virtual backgrounds, beauty filters, cloud recording, or audio effects. Use when the user mentions 实时音视频, 直播, 即时通讯, 数字人, or AI Agent.
+version: 1.1.3
 ---
 
 ## ZEGO Product Integration Guide
@@ -15,26 +15,19 @@ This skill provides structured workflows for integrating ZEGO products and featu
 
 ## Integration Workflow
 
-When a user requests integration of ZEGO products, follow these steps in order:
+When a user requests integration of ZEGO products or features, follow these steps in order:
+
+### Step 0[IMPORTANT]: Get ZEGO Available Products and features
+
+Call `get_zego_product_datasets` mcp tool and get all products and features and platforms that ZEGO supports.
 
 ### Step 1: Determine Integration Scope
 
-Identify which products, features, and platforms the user needs to integrate:
+Based on the chat history and the results from `get_zego_product_datasets`, identify which products, features, and platforms the user needs to integrate:
 
 **Product-Level Integration:**
-- Clarify the target platform (iOS, Android, Web, Windows, macOS, Linux, Flutter, etc.)
-- Confirm which ZEGO products are required:
-  - Real-Time Audio/Video (RTC)
-  - In-app Chat (ZIM)
-  - AI Agent
-  - Low-Latency Live Streaming
-  - AI Effects/AI Effects SDK
-  - Digital Human/Digital Human SDK
-  - SuperBoard/SuperBoard SDK
-  - Cloud Recording
-  - Cloud Player
-  - Cloud ASR
-  - Other ZEGO products
+- Clarify the target platform (Server-side[Node.js, Go, Python, Java, C++, PHP, C#, etc.], Client-side[iOS, Android, Web, Windows, macOS, Linux, Flutter, etc.])
+- Confirm which ZEGO products are required
 
 **Feature-Level Integration (examples):**
 - Screen sharing (屏幕共享)
@@ -42,8 +35,7 @@ Identify which products, features, and platforms the user needs to integrate:
 - Virtual background (虚拟背景)
 - Other ZEGO Product/SDK features
 
-**Project Type:**
-- Verify the user's project type (native app, web app, server-side integration)
+If it is not enough to determine which products or features the user needs to integrate, use `AskUserQuestion` tool to continue asking the user until it is determined.
 
 ### Step 2: Gather Product Information
 
@@ -52,7 +44,10 @@ Before writing any integration code, gather necessary documentation:
 **Call required MCP tools:**
 
 1. **`get_platforms_by_product`** - Retrieve all supported platforms for the target product
+   - `product` parameter can not contain underscores and hyphens, probably contains Chinese. For example (实时音视频, 实时互动 AI Agent) can not use (real_time_video_rtc, aiagent_rtc)
 2. **`get_doc_links`** - Get documentation links for the specific product and platform
+   - You must use the links for the specific platform, because the implementation steps or details for each platform are different, and it may eventually lead to failure!
+   - `product` parameter can not contain underscores and hyphens, probably contains Chinese. For example (实时音视频, 实时互动 AI Agent) can not use (real_time_video_rtc, aiagent_rtc)
 3. **`get_token_generate_doc`** - Obtain Token generation documentation and example code for authentication
 4. **`get_server_signature_doc`** - Get server API signature documentation for server-side calls
 
@@ -63,7 +58,7 @@ From the documentation links returned by `get_doc_links`, filter for:
 - Integrating SDK / 集成SDK
 - Implementation Guide / 实现指南
 
-Use `mcp__web_reader__webReader` to read the complete documentation from `.md` links. Complete documentation is essential for integration workflows - do not rely on fragmented search results.
+[IMPORTANT] You must use `WebFetch` to read the complete documentation from `.md` links. Complete documentation is essential for integration workflows. READ BEFORE CODING! And do not rely on fragmented search results
 
 ### Step 4: Implement Client-Side Integration
 
@@ -114,7 +109,7 @@ Read the specific API documentation to understand parameters, callbacks, and usa
 
 **For complete integration workflows:**
 - Use `get_doc_links` to retrieve documentation URLs
-- Use `mcp__web_reader__webReader` to read complete `.md` documentation
+- Use `WebFetch` to read complete `.md` documentation
 - Never rely on RAG fragments for Quick Start or Integration guides
 
 **For specific API queries:**
@@ -167,16 +162,16 @@ dataset_ids = ["cloud_player_zh", "cloud_player_server_zh"]  # ❌ These are nam
 ## Available MCP Tools
 
 **Product Information:**
-- `mcp__plugin_zego-assistant_ZEGO__get_zego_product_datasets` - List all products and knowledge bases
-- `mcp__plugin_zego-assistant_ZEGO__get_platforms_by_product` - Get supported platforms for a product
-- `mcp__plugin_zego-assistant_ZEGO__get_doc_links` - Get documentation links for product/platform
+- `get_zego_product_datasets` - List all products and knowledge bases
+- `get_platforms_by_product` - Get supported platforms for a product
+- `get_doc_links` - Get documentation links for product/platform
 
 **Code Examples:**
-- `mcp__plugin_zego-assistant_ZEGO__get_token_generate_doc` - Token generation code (GO, CPP, JAVA, PYTHON, NODEJS, PHP, CSHARP)
-- `mcp__plugin_zego-assistant_ZEGO__get_server_signature_doc` - API signature code (GO, CPP, JAVA, PYTHON, NODEJS, PHP, CSHARP)
+- `get_token_generate_doc` - Token generation code (GO, CPP, JAVA, PYTHON, NODEJS, PHP, CSHARP)
+- `get_server_signature_doc` - API signature code (GO, CPP, JAVA, PYTHON, NODEJS, PHP, CSHARP)
 
 **Documentation Search:**
-- `mcp__plugin_zego-assistant_ZEGO__search_zego_docs` - RAG-based documentation search
+- `search_zego_docs` - RAG-based documentation search
 
 ## Best Practices
 
@@ -202,6 +197,10 @@ dataset_ids = ["cloud_player_zh", "cloud_player_server_zh"]  # ❌ These are nam
    - FAQ knowledge bases may not be as current as other documentation
    - Prioritize official guides and API references over FAQ content
 
+6. **Web SDK Integration**
+   - Use npm to install the ZEGO Web SDK and import the SDK into the project
+   - Some web frameworks (e.g., Nextjs) may use server-side rendering, pay attention to the initialization timing of the client SDK to avoid errors when initializing the SDK during server-side rendering.
+
 ## Common Integration Scenarios
 
 **Real-Time Audio/Video/Live Streaming (RTC):**
@@ -218,7 +217,8 @@ dataset_ids = ["cloud_player_zh", "cloud_player_server_zh"]  # ❌ These are nam
 
 Some products have special integration requirements beyond the general workflow. Consult product-specific reference files:
 
-- `references/ai-agent.md`
+- AI Agent(实时互动 AI Agent): `references/ai-agent.md`
+- RTC(实时音视频、实时语音、低延迟直播、Video Call、Voice Call、Live Streaming): `references/rtc.md`
 
 ## Integration Checklist
 

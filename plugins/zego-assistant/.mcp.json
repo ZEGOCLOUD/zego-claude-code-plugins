@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ZEGO": {
+      "type": "http",
+      "url": "https://doc-ai.zego.im/mcp/"
+    }
+  }
+}

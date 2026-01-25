@@ -1,7 +1,7 @@
 ---
 name: implement-zego-token-on-server
-description: This skill should be used when the user asks to "integrate ZEGO Token generation", "add Token endpoint", "implement server-side Token API", "generate Token on server", or needs help with ZEGO Token server integration. Provides SDK download and route implementation guidance for Token generation.
-version: 1.0.1
+description: Implements ZEGO Token generation on backend servers. Use when the user asks to generate Token, implement Token API, or create authentication endpoint. Use when building server-side authorization for ZEGO client SDKs. Use when the user mentions token生成, 实现token, 鉴权, Token校验, or server-side authentication for RTC/ZIM/Express SDK.
+version: 1.0.3
 ---
 
 # ZEGO Server Token Integration

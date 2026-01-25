@@ -1,7 +1,7 @@
 ---
 name: search-zego-doc-fragments
-description: This skill should be used when the user asks to "look up ZEGO error code", "find error code meaning", "search ZEGO API usage", "check if ZEGO supports feature", "查询ZEGO错误码", "错误码是什么意思", or needs to find specific information about ZEGO APIs, error codes, configuration options, or feature availability. Uses RAG to return knowledge base fragments.
-version: 1.0.1
+description: Searches ZEGO documentation for specific API info, error codes, error messages, and parameters. Use when the user asks about error code/error mesage meanings, API parameters, or feature support. Use when troubleshooting ZEGO SDK issues or checking platform compatibility. Use when the user mentions 错误码, 这个参数什么意思, API怎么用, does ZEGO support, or debugging RTC/ZIM/Express SDK problems. Do NOT use this skill when the user wants to integrate or implement ZEGO products/features - use integrate-zego-product instead.
+version: 1.0.4
 ---
 
 ## ZEGO Knowledge Base Search
@@ -57,7 +57,7 @@ Before executing any search, confirm the following information with the user if 
    List from `get_zego_product_datasets` tool returned list
 
 2. **Platform** (if applicable) - Which platform?
-   List from `get_platforms_by_product` tool returned list
+   List from `get_platforms_by_product` tool returned list(name parameter can not contain underscores and hyphens, probably contains Chinese. For example (实时音视频, 实时互动 AI Agent) can not use (real_time_video_rtc, aiagent_rtc))
 
 
 **When to ask:**

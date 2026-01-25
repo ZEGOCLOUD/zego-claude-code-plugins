@@ -1,7 +1,7 @@
 ---
 name: integrate-zego-server-api
-description: This skill should be used when the user asks to "integrate ZEGO server API", "implement API signature", "call ZEGO server API", "generate signature for ZEGO API", or needs help with server-side integration for ZEGO products (RTC, ZIM, AI Agent, etc.). Provides unified API signature mechanism and request structure.
-version: 2.0.1
+description: Implements ZEGO server API integration with signature authentication. Use when the user asks to call ZEGO server APIs, generate API signatures, or integrate backend features. Use when implementing room management, stream mixing, user kicking, or server-to-server messaging. Use when the user mentions 服务端API, 签名, 后端调用, server API signature, or backend integration with RTC/ZIM/AI Agent.
+version: 2.0.3
 ---
 
 # ZEGO Server API Integration

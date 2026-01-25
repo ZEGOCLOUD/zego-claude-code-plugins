@@ -1,0 +1,8 @@
+{
+  "name": "zego-assistant",
+  "description": "ZEGO product integration assistant with intelligent documentation search via RAG, supporting RTC, ZIM, AI Agent, and more",
+  "author": {
+    "name": "Oliver Yang",
+    "email": "oliveryang@zego.im"
+  }
+}

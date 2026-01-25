@@ -1,65 +1,54 @@
 {
-    "name": "zego-claude-code-plugins",
-    "owner": {
-        "name": "ZEGO",
-        "email": "docuo@zego.im",
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "zego-claude-code-plugins",
+  "description": "ZEGO official plugins for Claude Code - product integration, documentation search, and AI Agent development tools",
+  "owner": {
+    "name": "ZEGO",
+    "email": "docuo@zego.im",
+    "url": "https://zego.im"
+  },
+  "plugins": [
+    {
+      "name": "write-zego-docs",
+      "description": "Tools for writing, reviewing, and formatting ZEGO documentation with demo validation",
+      "source": "./plugins/write-zego-docs",
+      "version": "1.0.1",
+      "author": {
+        "name": "Oliver Yang",
+        "email": "oliveryang@zego.im",
         "url": "https://zego.im"
+      },
+      "license": "MIT",
+      "keywords": [
+        "zego",
+        "documentation",
+        "writing",
+        "editing",
+        "formatting",
+        "translation"
+      ],
+      "category": "documentation",
+      "strict": false
     },
-    "metadata": {
-        "description": "",
-        "version": "1.0.0"
-    },
-    "plugins": [
-        {
-            "name": "write-zego-docs",
-            "source": "./plugins/write-zego-docs",
-            "version": "1.0.1",
-            "author": {
-                "name": "Oliver Yang",
-                "email": "oliveryang@zego.im",
-                "url": "https://zego.im"
-            },
-            "license": "MIT",
-            "keywords": [
-                "zego",
-                "documentation",
-                "writing",
-                "editing",
-                "formatting",
-                "translation"
-            ],
-            "category": "documentation",
-            "commands": [
-                "./commands/review-run-demo-doc.md"
-            ],
-            "skills": "./skills/",
-            "agents": [
-                "./agents/run-demo-reviewer.md"
-            ],
-            "strict": false
-        },
-        {
-            "name": "zego-assistant",
-            "source": "./plugins/zego-assistant",
-            "version": "1.2.5",
-            "author": {
-                "name": "Oliver Yang",
-                "email": "oliveryang@zego.im",
-                "url": "https://zego.im"
-            },
-            "license": "MIT",
-            "keywords": ["zego", "rtc", "im", "aiagent", "integration", "troubleshooting"],
-            "category": "integration",
-            "commands": [],
-            "skills": "./skills/",
-            "agents": [],
-            "mcpServers": {
-                "ZEGO": {
-                    "type": "http",
-                    "url": "https://doc-ai.zego.im/mcp/"
-                }
-            },
-            "strict": false
+    {
+      "name": "zego-assistant",
+      "description": "ZEGO product integration assistant with intelligent documentation search via RAG, supporting RTC, ZIM, AI Agent, and more",
+      "source": "./plugins/zego-assistant",
+      "version": "1.2.21",
+      "author": {
+        "name": "Oliver Yang",
+        "email": "oliveryang@zego.im",
+        "url": "https://zego.im"
+      },
+      "license": "MIT",
+      "keywords": ["zego", "rtc", "im", "aiagent", "integration", "troubleshooting"],
+      "category": "integration",
+      "mcpServers": {
+        "ZEGO": {
+          "type": "http",
+          "url": "https://doc-ai.zego.im/mcp/"
         }
-    ]
+      }
+    }
+  ]
 }
