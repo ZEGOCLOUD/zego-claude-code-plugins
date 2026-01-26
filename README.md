@@ -9,16 +9,10 @@ ZEGO 官方 Claude Code 插件集合。
    ```
 
 2. **安装插件**
+   可以通话/plugin命令跳转到marketplace后交互式安装插件。也可以直接使用以下命令安装：
    ```bash
-   /plugin install write-zego-docs@zego-claude-code-plugins
    /plugin install zego-assistant@zego-claude-code-plugins
    ```
-
-3. **验证安装**
-
-   启动后，在 Claude Code 中输入 `/` 可以看到所有可用的命令：
-   - `/review-run-demo-doc` - 审核跑通示例代码文档
-
 ## 贡献指南
 
 欢迎提交 Issue 和 Pull Request！
