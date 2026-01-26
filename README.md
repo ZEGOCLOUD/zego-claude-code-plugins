@@ -1,5 +1,7 @@
 # ZEGO Claude Code Plugins
 
+[![English](https://img.shields.io/badge/lang-English-blue.svg)](README_EN.md) [![中文](https://img.shields.io/badge/lang-中文-red.svg)](README.md)
+
 ZEGO 官方 Claude Code 插件集合。
 
 ## 快速开始
