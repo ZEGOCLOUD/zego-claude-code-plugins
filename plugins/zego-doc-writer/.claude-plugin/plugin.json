@@ -1,5 +1,5 @@
 {
-  "name": "write-zego-docs",
+  "name": "zego-doc-writer",
   "description": "ZEGO 技术文档写作助手，提供文档创建、编辑、格式化、翻译、审核等功能",
   "author": {
     "name": "Oliver Yang",

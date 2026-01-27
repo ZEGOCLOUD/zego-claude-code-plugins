@@ -9,10 +9,10 @@
   },
   "plugins": [
     {
-      "name": "write-zego-docs",
+      "name": "zego-doc-writer",
       "description": "Tools for writing, reviewing, and formatting ZEGO documentation with demo validation",
-      "source": "./plugins/write-zego-docs",
-      "version": "1.0.1",
+      "source": "./plugins/zego-doc-writer",
+      "version": "1.0.5",
       "author": {
         "name": "Oliver Yang",
         "email": "oliveryang@zego.im",
