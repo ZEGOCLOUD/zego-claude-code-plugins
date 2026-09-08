@@ -1,79 +1,44 @@
 # ZEGO Assistant
 
-ZEGO产品集成和问题排查智能助手，帮助开发者快速接入ZEGO产品（RTC/IM/AIAgent）并提供全方位的技术支持。
+ZEGO 产品集成和问题排查智能助手，帮助开发者快速接入 ZEGO 产品（RTC / ZIM / AI Agent）并提供全方位的技术支持。
 
 ## 功能特性
 
-### 🤖 智能集成向导（Agents）
-- **RTC集成向导**：实时音视频产品交互式集成助手
-- **IM集成向导**：即时通讯产品交互式集成助手
-- **AIAgent集成向导**：AI Agent产品交互式集成助手
-
 ### 📚 知识库（Skills）
-提供6大通用知识模块，覆盖跨产品的集成和问题排查：
+提供 5 大通用知识模块，覆盖跨产品的集成和问题排查：
 
-1. **服务端集成**：Token生成、服务端API调用、认证流程
-2. **客户端集成**：SDK初始化、登录流程、事件处理
-3. **配置检查**：AppID、权限、网络配置验证
-4. **性能诊断**：卡顿、延迟、音视频质量问题诊断
-5. **平台特定问题**：iOS/Android/Web/Flutter平台特定解决方案
-6. **问题排查**：错误码、日志分析、调试技巧
-
-### 🎯 快速命令（Commands）
-- `/check-zego-config`：检查项目中ZEGO配置的正确性和完整性
-- `/diagnose-zego-issue`：交互式诊断ZEGO相关问题
+1. **integrate-zego-product**：客户端 SDK 集成（Express / ZIM / AI Agent / 数字人 / 超级白板），覆盖快速开始、SDK 初始化、事件处理等完整流程
+2. **implement-zego-token-on-server**：服务端 Token 生成（多语言示例：Go / Java / Python / Node / PHP / C#）
+3. **integrate-zego-server-api**：服务端 API 调用与签名机制
+4. **resource-downloader**：下载 ZEGO SDK、示例项目和 Demo
+5. **search-zego-doc-fragments**：RAG 检索 ZEGO 文档片段（错误码、API 参数、平台兼容性）
 
 ### 📖 文档服务（MCP）
-连接ZEGO文档服务，提供实时文档查询能力（即将推出）
+连接 ZEGO 文档服务（`https://doc-ai.zego.im/mcp/`），提供实时文档查询能力，包括产品知识库索引、平台支持列表、文档链接、Token 鉴权说明、服务端签名说明及 RAG 文档搜索。
 
 ## 安装
 
-### 从Marketplace安装（即将推出）
 ```bash
 /plugin marketplace add https://github.com/ZEGOCLOUD/zego-claude-code-plugins
-/plugin install zego-assistant
+/plugin install zego-assistant@zego-claude-code-plugins
 ```
 
-### 本地安装
-```bash
-# 将插件复制到Claude Code插件目录
-cp -r plugins/zego-assistant ~/.claude/plugins/
-```
+安装后即可在当前会话中直接使用（无需重启）。
 
 ## 快速开始
 
-### 1. 集成ZEGO RTC产品
-直接提问：
-```
-如何集成ZEGO的RTC SDK到我的iOS项目？
-```
+直接用自然语言提问即可，例如：
 
-或使用命令：
 ```
-/integrate-rtc
+如何集成 ZEGO 的 RTC SDK 到我的 iOS 项目？
 ```
 
-### 2. 检查配置
-```bash
-/check-zego-config
+```
+帮我在 Go 服务端实现 ZEGO Token 生成
 ```
 
-### 3. 诊断问题
-```bash
-/diagnose-zego-issue
 ```
-
-## 配置
-
-创建用户配置文件 `.claude/zego-assistant.local.md`：
-
-```yaml
----
-default_app_id: "your_app_id_here"
-server_environment: "production"  # production | staging | test
-primary_platform: "ios"           # ios | android | web | flutter
-log_level: "info"                 # debug | info | warn | error
----
+错误码 1000001 是什么意思？
 ```
 
 ## 插件结构
@@ -82,52 +47,14 @@ log_level: "info"                 # debug | info | warn | error
 zego-assistant/
 ├── .claude-plugin/
 │   └── plugin.json          # 插件清单
-├── commands/                 # 快速命令
-│   ├── check-zego-config.md
-│   └── diagnose-zego-issue.md
-├── agents/                   # 集成向导
-│   ├── rtc-integration-agent.md
-│   ├── im-integration-agent.md
-│   └── aiagent-integration-agent.md
 ├── skills/                   # 知识库
-│   ├── server-integration/
-│   ├── client-integration/
-│   ├── config-checker/
-│   ├── performance-diagnosis/
-│   ├── platform-specific-issues/
-│   └── troubleshooting/
-└── .mcp.json                # 文档服务配置
+│   ├── integrate-zego-product/
+│   ├── implement-zego-token-on-server/
+│   ├── integrate-zego-server-api/
+│   ├── resource-downloader/
+│   └── search-zego-doc-fragments/
+└── .mcp.json                 # ZEGO 文档服务 MCP 配置
 ```
-
-## 使用示例
-
-### 示例1：RTC集成
-**用户**：帮我集成ZEGO RTC到我的Android项目
-
-**Agent**：
-1. 询问项目信息（技术栈、业务场景）
-2. 引导添加SDK依赖
-3. 引导配置权限
-4. 引导初始化代码
-5. 提供测试验证建议
-
-### 示例2：性能问题诊断
-**用户**：我的RTC通话很卡，画质也不清晰
-
-**Claude**：（调用performance-diagnosis Skill）
-1. 检查网络环境
-2. 分析性能指标（码率、帧率、丢包率）
-3. 提供优化建议
-4. 针对平台调优建议
-
-### 示例3：配置检查
-**用户**：/check-zego-config
-
-**Claude**：
-1. 扫描配置文件
-2. 验证AppID、AppSign
-3. 检查权限配置
-4. 生成检查报告
 
 ## 技术支持
 
@@ -141,4 +68,4 @@ MIT License
 
 ## 贡献
 
-欢迎提交Issue和Pull Request！
+欢迎提交 Issue 和 Pull Request！

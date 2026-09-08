@@ -1,6 +1,10 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "zego-assistant",
+  "displayName": "ZEGO Assistant",
   "description": "ZEGO product integration assistant with intelligent documentation search via RAG, supporting RTC, ZIM, AI Agent, and more",
+  "version": "1.2.22",
+  "keywords": ["zego", "rtc", "im", "aiagent", "integration", "troubleshooting"],
   "author": {
     "name": "Oliver Yang",
     "email": "oliveryang@zego.im"

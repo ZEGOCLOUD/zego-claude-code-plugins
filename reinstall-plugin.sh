@@ -21,7 +21,7 @@ PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MARKETPLACE_NAME="zego-claude-code-plugins"
 
 # Plugins in marketplace
-PLUGINS=("write-zego-docs" "zego-assistant")
+PLUGINS=("zego-assistant")
 
 echo -e "${YELLOW}========================================${NC}"
 echo -e "${YELLOW}ZEGO Plugin Reinstall Script${NC}"

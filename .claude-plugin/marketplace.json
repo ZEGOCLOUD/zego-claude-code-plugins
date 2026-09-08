@@ -1,5 +1,5 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "zego-claude-code-plugins",
   "description": "ZEGO official plugins for Claude Code - product integration, documentation search, and AI Agent development tools",
   "owner": {
@@ -9,32 +9,9 @@
   },
   "plugins": [
     {
-      "name": "zego-doc-writer",
-      "description": "Tools for writing, reviewing, and formatting ZEGO documentation with demo validation",
-      "source": "./plugins/zego-doc-writer",
-      "version": "1.0.5",
-      "author": {
-        "name": "Oliver Yang",
-        "email": "oliveryang@zego.im",
-        "url": "https://zego.im"
-      },
-      "license": "MIT",
-      "keywords": [
-        "zego",
-        "documentation",
-        "writing",
-        "editing",
-        "formatting",
-        "translation"
-      ],
-      "category": "documentation",
-      "strict": false
-    },
-    {
       "name": "zego-assistant",
       "description": "ZEGO product integration assistant with intelligent documentation search via RAG, supporting RTC, ZIM, AI Agent, and more",
       "source": "./plugins/zego-assistant",
-      "version": "1.2.21",
       "author": {
         "name": "Oliver Yang",
         "email": "oliveryang@zego.im",
@@ -42,13 +19,7 @@
       },
       "license": "MIT",
       "keywords": ["zego", "rtc", "im", "aiagent", "integration", "troubleshooting"],
-      "category": "integration",
-      "mcpServers": {
-        "ZEGO": {
-          "type": "http",
-          "url": "https://doc-ai.zego.im/mcp/"
-        }
-      }
+      "category": "integration"
     }
   ]
 }
