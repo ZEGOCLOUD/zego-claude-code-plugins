@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "zego-assistant",
-      "description": "ZEGO product integration assistant with intelligent documentation search via RAG, supporting RTC, ZIM, AI Agent, and more",
+      "description": "Deprecated: superseded by the standalone zego-integration Agent Skill (https://github.com/ZEGOCLOUD/zego-integration). This plugin now only shows migration guidance.",
       "source": "./plugins/zego-assistant",
       "author": {
         "name": "Oliver Yang",
@@ -18,7 +18,7 @@
         "url": "https://zego.im"
       },
       "license": "MIT",
-      "keywords": ["zego", "rtc", "im", "aiagent", "integration", "troubleshooting"],
+      "keywords": ["zego", "rtc", "im", "aiagent", "integration", "troubleshooting", "deprecated"],
       "category": "integration"
     }
   ]
